@@ -109,6 +109,12 @@ POST /freelances
 GET /freelances
 ```
 
+##### 🖲️ Lister tous les freelances filtrer avec une compétence
+
+```http
+GET /freelances?skill=react
+```
+
 ##### 🔍 Récupérer un freelance par ID
 
 ```http
@@ -163,7 +169,7 @@ GET /entreprises/{id}
 ##### ➕ Créer un projet pour une entreprise
 
 ```http
-POST /entreprises/{entrepriseId}/projects
+POST /entreprises/{entrepriseId}/projets
 ```
 
 ```json
@@ -179,11 +185,17 @@ POST /entreprises/{entrepriseId}/projects
 ##### 📄 Lister les projets d’une entreprise
 
 ```http
-GET /entreprises/{entrepriseId}/projects
+GET /entreprises/{entrepriseId}/projets
 ```
 
 ##### 🎯 Lister les candidats compatibles pour un projet
 
 ```http
-GET /entreprises/{entrepriseId}/projects/{projectId}/candidats-compatibles
+GET /entreprises/{entrepriseId}/projets/{projectId}/candidats-compatibles
+```
+
+##### 🔓 Lister tous les projets ouverts (sans freelance)
+
+```http
+GET /projets/ouvert
 ```

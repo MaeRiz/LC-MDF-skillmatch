@@ -4,15 +4,18 @@ POST http://localhost:8000/freelances
 Content-Type: application/json
 
 {
-    "nom": "Johnatan Bayer",
-    "email": "joh0na.bayer@domain.com",
-    "skills": ["Python", "React", "Postman", "Angular"],
+    "nom": "Johnatiohman Bayer",
+    "email": "joh0oimna.bayer@domain.com",
+    "skills": ["React", "Postman", "Angular"],
     "tjm": 130
 }
 
 
 ### List all freelance
 GET http://localhost:8000/freelances
+
+### List all freelance with skill
+GET http://localhost:8000/freelances?skill=react
 
 
 ### GET freelance by id
@@ -46,7 +49,7 @@ GET http://localhost:8000/entreprises/1
 
 
 ### Create project for entreprise 
-POST http://localhost:8000/entreprises/1/projects
+POST http://localhost:8000/entreprises/1/projets
 Content-Type: application/json
 
 {
@@ -59,8 +62,12 @@ Content-Type: application/json
 
 
 ### List projects for entreprise
-GET http://localhost:8000/entreprises/1/projects
+GET http://localhost:8000/entreprises/1/projets
 
 
 ### List les candidats compatibles a un projet
-GET http://localhost:8000/entreprises/1/projects/2/candidats-compatibles
+GET http://localhost:8000/entreprises/1/projets/2/candidats-compatibles
+
+
+### List all open projects
+GET http://localhost:8000/projets/ouvert

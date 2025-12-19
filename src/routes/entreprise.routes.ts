@@ -14,8 +14,8 @@ router.post("/", createEntreprise);
 router.get("/", getEntreprises);
 router.get("/:id", getEntrepriseById);
 
-router.post("/:id/projects", createProjectForEntreprise);
-router.get("/:id/projects", getProjectsByEntrepriseId);
-router.get("/:id/projects/:projectId/candidats-compatibles", getProjectFreelanceCompatibility);
+router.post("/:id/projets", createProjectForEntreprise);
+router.get("/:id/projets", getProjectsByEntrepriseId);
+router.get("/:id/projets/:projectId/candidats-compatibles", getProjectFreelanceCompatibility);
 
 export { router as EntrepriseRouter };

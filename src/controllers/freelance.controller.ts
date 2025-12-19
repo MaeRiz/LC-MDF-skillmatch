@@ -27,6 +27,17 @@ export const createFreelance = async (req: Request, res: Response, next: NextFun
 
 export const getFreelances = async (req: Request, res: Response, next: NextFunction): Promise<any> => {
 	try {
+		const skill = req.query.skill?.toString();
+		if (skill) {
+			const freelances = await prisma.freelance.findMany();
+			const filteredFreelance = freelances.filter((fl) =>
+				fl.skills.some((s) => s.toLowerCase().trim() === skill.toLowerCase().trim())
+			);
+			if (!filteredFreelance.length) {
+				return res.jsonError("Il n'y a aucun freelance d'enregistré avec la compétence: " + skill);
+			}
+			return res.jsonSuccess(filteredFreelance);
+		}
 		const freelances = await prisma.freelance.findMany();
 		if (!freelances.length) {
 			return res.jsonError("Il n'y a aucun freelance d'enregistré.");
